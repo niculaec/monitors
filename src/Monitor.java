@@ -33,20 +33,35 @@ public class Monitor {
         this.diagonal = diagonal;
     }
 
+    public void changePower(String power){
+        this.power = power;
+    }
+
     @Override
     public String toString() {
         return "Monitor{" +
-                "brand='" + brand + '\'' +
+                "brand=" + brand +
                 ", power='" + power + '\'' +
-                ", resolution='" + resolution + '\'' +
-                ", diagonal='" + diagonal + '\'' +
+                ", resolution=" + resolution +
+                ", dimensions=" + dimensions +
+                ", diagonal=" + diagonal +
                 '}';
+    }
+
+    public static Monitor findLastMonitorByHeight(int height, ArrayList<Monitor> monitorList){
+        ArrayList<Monitor> resultList = new ArrayList<Monitor>();
+        for (Monitor monitor:monitorList) {
+            if (monitor.dimensions.height == height){
+                resultList.add(monitor);
+            }
+        }
+        return resultList.get(resultList.size()-1);
     }
 
     public static ArrayList<Monitor> findByBrand(Brand brand, ArrayList<Monitor> monitorList){
         ArrayList<Monitor> resultList = new ArrayList<Monitor>();
         for (Monitor monitor:monitorList) {
-            if (monitor.brand == brand)){
+            if (monitor.brand == brand){
                 resultList.add(monitor);
             }
         }
