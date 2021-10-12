@@ -60,12 +60,22 @@ public class Monitor {
     }
 
     public enum Diagonal{
-        diagonal24,
-        diagonal27,
-        diagonal30;
-
+        INCH_24,
+        INCH_27,
+        INCH_30;
     }
 
+    public enum Brand{
+        LG,
+        SAMSUNG,
+        AOC;
+    }
 
-
+    public enum Resolution{
+        RESOLUTION_HD,
+        RESOLUTION_FULL_HD,
+        RESOLUTION_2K,
+        RESOLUTION_4K,
+        RESOLUTION_8K;
+    }
 }
