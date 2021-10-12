@@ -2,21 +2,30 @@ import java.util.ArrayList;
 
 public class Monitor {
     public static void main(String[] args) {
+
         Dimensions dimensions = new Dimensions(33,55,13);
+        Dimensions dimensions2 = new Dimensions(24,80,90);
+
         ArrayList<Monitor> monitorList = new ArrayList<Monitor>();
         Monitor monitor1 = new Monitor(Brand.LG,"65",Resolution.RESOLUTION_HD, dimensions, Diagonal.INCH_24);
-        Monitor monitor2 = new Monitor(Brand.SAMSUNG, "32",Resolution.RESOLUTION_8K, dimensions, Diagonal.INCH_30);
+        monitor1.changePower("90");
+        Monitor monitor2 = new Monitor(Brand.SAMSUNG, "32",Resolution.RESOLUTION_8K, dimensions2, Diagonal.INCH_30);
         monitorList.add(monitor1);
         monitorList.add(monitor2);
+        System.out.println(findByBrand(Brand.LG, monitorList));
+        System.out.println(monitor1.dimensions);
+        System.out.println(monitor2.dimensions);
+        System.out.println(findLastMonitorByHeight(dimensions.height, monitorList));
+
     }
 
-    public final Brand;
-    String power;
-    public final Resolution;
+    public final Brand brand;
+    private String power;
+    public final Resolution resolution;
     public final Dimensions dimensions;
     public final Diagonal diagonal;
 
-    public Monitor(String brand, String power, String resolution, Dimensions dimensions, Diagonal diagonal) {
+    public Monitor(Brand brand, String power, Resolution resolution, Dimensions dimensions, Diagonal diagonal) {
         this.brand = brand;
         this.power = power;
         this.resolution = resolution;
