@@ -10,12 +10,33 @@ public class Monitor {
         Monitor monitor1 = new Monitor(Brand.LG,"65",Resolution.RESOLUTION_HD, dimensions, Diagonal.INCH_24);
         monitor1.changePower("90");
         Monitor monitor2 = new Monitor(Brand.SAMSUNG, "32",Resolution.RESOLUTION_8K, dimensions2, Diagonal.INCH_30);
+        Monitor monitor3 = new Monitor(Brand.SAMSUNG, "32",Resolution.RESOLUTION_4K, dimensions2, Diagonal.INCH_30);
+        Monitor monitor4 = new Monitor(Brand.AOC, "64",Resolution.RESOLUTION_2K, dimensions, Diagonal.INCH_27);
+        Monitor monitor5 = new Monitor(Brand.LG, "32",Resolution.RESOLUTION_FULL_HD, dimensions2, Diagonal.INCH_24);
+        Monitor monitor6 = new Monitor(Brand.SAMSUNG, "32",Resolution.RESOLUTION_HD, dimensions2, Diagonal.INCH_30);
+
         monitorList.add(monitor1);
         monitorList.add(monitor2);
+        monitorList.add(monitor3);
+        monitorList.add(monitor4);
+        monitorList.add(monitor5);
+        monitorList.add(monitor6);
+
+        System.out.println("1");
         System.out.println(findByBrand(Brand.LG, monitorList));
+        System.out.println("");
+        System.out.println("2");
         System.out.println(monitor1.dimensions);
+        System.out.println("");
+        System.out.println("3");
         System.out.println(monitor2.dimensions);
+        System.out.println("");
+        System.out.println("4");
         System.out.println(findLastMonitorByHeight(dimensions.height, monitorList));
+        System.out.println("");
+        System.out.println("5");
+        System.out.println(findByResolution(Resolution.RESOLUTION_4K,monitorList));
+
 
     }
 
