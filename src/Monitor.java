@@ -3,39 +3,25 @@ import java.util.ArrayList;
 public class Monitor {
     public static void main(String[] args) {
         Dimensions dimensions = new Dimensions(33,55,13);
-        ArrayList<Monitor> monitor = new ArrayList<Monitor>();
-        Monitor monitor1 = new Monitor("Lg","27","65","4k", Diagonal.diagonal24);
-        Monitor monitor2 = new Monitor("Samsung", "32","80","fullHD",Diagonal.diagonal30);
-
+        ArrayList<Monitor> monitorList = new ArrayList<Monitor>();
+        Monitor monitor1 = new Monitor(Brand.LG,"65",Resolution.RESOLUTION_HD, dimensions, Diagonal.INCH_24);
+        Monitor monitor2 = new Monitor(Brand.SAMSUNG, "32",Resolution.RESOLUTION_8K, dimensions, Diagonal.INCH_30);
+        monitorList.add(monitor1);
+        monitorList.add(monitor2);
     }
-    String brand;
-    String power;
-    String resolution;
-    public final Diagonal diagonal ;
 
-    public Monitor(String brand, String dimension, String power, String resolution, Diagonal diagonal) {
+    public final Brand;
+    String power;
+    public final Resolution;
+    public final Dimensions dimensions;
+    public final Diagonal diagonal;
+
+    public Monitor(String brand, String power, String resolution, Dimensions dimensions, Diagonal diagonal) {
         this.brand = brand;
         this.power = power;
         this.resolution = resolution;
+        this.dimensions = dimensions;
         this.diagonal = diagonal;
-    }
-
-
-    public String getBrand() {
-        return brand;
-    }
-
-
-    public String getPower() {
-        return power;
-    }
-
-    public String getResolution() {
-        return resolution;
-    }
-
-    public Diagonal getDiagonal() {
-        return diagonal;
     }
 
     @Override
@@ -44,9 +30,21 @@ public class Monitor {
                 "brand='" + brand + '\'' +
                 ", power='" + power + '\'' +
                 ", resolution='" + resolution + '\'' +
-                //", diagonal='" + diagonal + '\'' +
+                ", diagonal='" + diagonal + '\'' +
                 '}';
     }
+
+    public static ArrayList<Monitor> findByBrand(Brand brand, ArrayList<Monitor> monitorList){
+        ArrayList<Monitor> resultList = new ArrayList<Monitor>();
+        for (Monitor monitor:monitorList) {
+            if (monitor.brand == brand)){
+                resultList.add(monitor);
+            }
+        }
+        if (!resultList.isEmpty()){
+            return resultList;
+        }
+        return null;
 
     static class Dimensions {
         int length;
