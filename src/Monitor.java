@@ -54,6 +54,17 @@ public class Monitor {
             return resultList;
         }
         return null;
+    }
+
+    public static ArrayList<Monitor> findByResolution(Resolution resolution, ArrayList<Monitor> monitorList){
+        ArrayList<Monitor> resultList = new ArrayList<Monitor>();
+        for (Monitor monitor:monitorList) {
+            if (monitor.resolution == resolution){
+                resultList.add(monitor);
+            }
+        }
+        return resultList;
+    }
 
     static class Dimensions {
         int length;
@@ -66,6 +77,14 @@ public class Monitor {
             this.height = height;
         }
 
+        @Override
+        public String toString() {
+            return "Dimensions{" +
+                    "length=" + length +
+                    ", wide=" + wide +
+                    ", height=" + height +
+                    '}';
+        }
     }
 
     public enum Diagonal{
