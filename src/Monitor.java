@@ -25,16 +25,16 @@ public class Monitor {
         System.out.println("1");
         for (Object m : findByBrand(Brand.LG, monitorList))
             System.out.println(m);
-        System.out.println("");
+        System.out.println();
         System.out.println("2");
         System.out.println(monitor1.dimensions);
-        System.out.println("");
+        System.out.println();
         System.out.println("3");
         System.out.println(monitor2.dimensions);
-        System.out.println("");
+        System.out.println();
         System.out.println("4");
         System.out.println(findLastMonitorByHeight(dimensions.height, monitorList));
-        System.out.println("");
+        System.out.println();
         System.out.println("5");
         System.out.println(findByResolution(Resolution.RESOLUTION_4K,monitorList));
 
@@ -127,13 +127,13 @@ public class Monitor {
     public enum Diagonal{
         INCH_24,
         INCH_27,
-        INCH_30;
+        INCH_30
     }
 
     public enum Brand{
         LG,
         SAMSUNG,
-        AOC;
+        AOC
     }
 
     public enum Resolution{
@@ -141,6 +141,6 @@ public class Monitor {
         RESOLUTION_FULL_HD,
         RESOLUTION_2K,
         RESOLUTION_4K,
-        RESOLUTION_8K;
+        RESOLUTION_8K
     }
 }
