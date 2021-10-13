@@ -23,7 +23,8 @@ public class Monitor {
         monitorList.add(monitor6);
 
         System.out.println("1");
-        System.out.println(findByBrand(Brand.LG, monitorList));
+        for (Object m : findByBrand(Brand.LG, monitorList))
+            System.out.println(m);
         System.out.println("");
         System.out.println("2");
         System.out.println(monitor1.dimensions);
