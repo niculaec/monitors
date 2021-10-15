@@ -96,7 +96,10 @@ public class Monitor {
                 resultList.add(monitor);
             }
         }
-        return resultList.get(resultList.size()-1);
+        if (!resultList.isEmpty()){
+            return resultList.get(resultList.size()-1);
+        }
+        return null;
     }
 
     public static ArrayList<Monitor> findByBrand(Brand brand, ArrayList<Monitor> monitorList){
@@ -167,6 +170,7 @@ public class Monitor {
         RESOLUTION_FULL_HD,
         RESOLUTION_2K,
         RESOLUTION_4K,
-        RESOLUTION_8K
+        RESOLUTION_8K;
+
     }
 }
