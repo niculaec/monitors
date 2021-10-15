@@ -73,6 +73,22 @@ public class Monitor {
                 '}';
     }
 
+    public static ArrayList<Monitor> returnNullIfListEmpty(ArrayList<Monitor> resultList) {
+        if (!resultList.isEmpty()){
+            return resultList;
+        }
+        return null;
+    }
+
+    public static void displayList(ArrayList<Monitor>resultList){
+        if (resultList != null){
+            for (Monitor m : resultList){
+                System.out.println(resultList.indexOf(m) +1);
+                System.out.println(m);
+            }
+        }
+    }
+
     public static Monitor findLastMonitorByHeight(int height, ArrayList<Monitor> monitorList){
         ArrayList<Monitor> resultList = new ArrayList<Monitor>();
         for (Monitor monitor:monitorList) {
