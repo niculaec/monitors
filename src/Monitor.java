@@ -22,22 +22,25 @@ public class Monitor {
         monitorList.add(monitor5);
         monitorList.add(monitor6);
 
-        System.out.println("1");
-        for (Monitor m : findByBrand(Brand.LG, monitorList))
-            System.out.println(m);
+        ArrayList<Monitor> resultList = findByBrand(Brand.SAMSUNG,monitorList);
+        System.out.println("I");
+        displayList(resultList);
+
+        System.out.println("II");
+        System.out.println((monitor1.dimensions) + "/n");
         System.out.println();
-        System.out.println("2");
-        System.out.println(monitor1.dimensions);
-        System.out.println();
-        System.out.println("3");
+        System.out.println("III");
         System.out.println(monitor2.dimensions);
         System.out.println();
-        System.out.println("4");
-        System.out.println(findLastMonitorByHeight(dimensions.height, monitorList));
+        System.out.println("IV");
+        System.out.println(findLastMonitorByHeight(0, monitorList));
         System.out.println();
-        System.out.println("5");
+        System.out.println("V");
         System.out.println(findByResolution(Resolution.RESOLUTION_4K,monitorList));
+        System.out.println("VI");
 
+        resultList = findByAtLeastResolution(Resolution.RESOLUTION_2K, monitorList);
+        displayList(resultList);
 
     }
 
