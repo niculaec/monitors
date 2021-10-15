@@ -106,10 +106,7 @@ public class Monitor {
                 resultList.add(monitor);
             }
         }
-        if (!resultList.isEmpty()){
-            return resultList;
-        }
-        return null;
+        return returnNullIfListEmpty(resultList);
     }
 
     public static ArrayList<Monitor> findByResolution(Resolution resolution, ArrayList<Monitor> monitorList){
