@@ -119,7 +119,17 @@ public class Monitor {
                 resultList.add(monitor);
             }
         }
-        return resultList;
+        return returnNullIfListEmpty(resultList);
+    }
+
+    public static ArrayList<Monitor> findByAtLeastResolution(Resolution resolution, ArrayList<Monitor> monitorList){
+        ArrayList<Monitor> resultList = new ArrayList<Monitor>();
+        for (Monitor monitor:monitorList) {
+            if (resolution.ordinal() <= monitor.resolution.ordinal()){
+                resultList.add(monitor);
+            }
+        }
+        return returnNullIfListEmpty(resultList);
     }
 
     static class Dimensions {
