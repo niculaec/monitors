@@ -7,12 +7,12 @@ public class Monitor {
         Dimensions dimensions2 = new Dimensions(24,80,90);
 
         ArrayList<Monitor> monitorList = new ArrayList<Monitor>();
-        Monitor monitor1 = new Monitor(Brand.LG,"65",Resolution.RESOLUTION_HD, dimensions, Diagonal.INCH_24);
+        Monitor monitor1 = new Monitor(Brand.AOC,"65",Resolution.RESOLUTION_HD, dimensions, Diagonal.INCH_24);
         monitor1.changePower("90");
         Monitor monitor2 = new Monitor(Brand.SAMSUNG, "32",Resolution.RESOLUTION_8K, dimensions2, Diagonal.INCH_30);
         Monitor monitor3 = new Monitor(Brand.SAMSUNG, "32",Resolution.RESOLUTION_4K, dimensions2, Diagonal.INCH_30);
         Monitor monitor4 = new Monitor(Brand.AOC, "64",Resolution.RESOLUTION_2K, dimensions, Diagonal.INCH_27);
-        Monitor monitor5 = new Monitor(Brand.LG, "32",Resolution.RESOLUTION_FULL_HD, dimensions2, Diagonal.INCH_24);
+        Monitor monitor5 = new Monitor(Brand.AOC, "32",Resolution.RESOLUTION_FULL_HD, dimensions2, Diagonal.INCH_24);
         Monitor monitor6 = new Monitor(Brand.SAMSUNG, "32",Resolution.RESOLUTION_HD, dimensions2, Diagonal.INCH_30);
 
         monitorList.add(monitor1);
