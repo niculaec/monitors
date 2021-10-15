@@ -170,7 +170,7 @@ public class Monitor {
         RESOLUTION_FULL_HD,
         RESOLUTION_2K,
         RESOLUTION_4K,
-        RESOLUTION_8K;
+        RESOLUTION_8K
 
     }
 }
